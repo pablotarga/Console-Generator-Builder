@@ -1,0 +1,77 @@
+*{
+	font-family:Arial;
+	font-size:12px;
+}
+
+input[type="text"], select{
+	width:300px;
+}
+
+h1{
+	font-size:2em;
+}
+
+h2{
+	font-size:1.4em;
+}
+
+pre.code{
+	background-color:black;
+	color: #EEE;
+	font-family: monospace;
+	padding:10px;
+	width:90%;
+	margin-top:20px;
+	white-space: pre-line;
+}
+
+div.page{
+	margin:auto;
+	width:90%;
+	padding:10px;
+}
+
+fieldset{
+	padding:10px;
+	margin:0px;
+}
+
+label{
+	width:100px;
+	display:inline-block;
+	text-align:left;
+	padding-right:3px;
+	font-weight:bold;
+}
+
+.left_div
+{
+	float:left;
+	width:20%;
+}
+.body_div
+{
+	float:left;
+	width:80%;
+}
+.indent{
+	padding-left:20px;
+}
+
+.link_add{
+	font-size:15px;
+}
+
+a img{
+	border:0px;
+}
+
+a{
+	padding:3px;
+	display:inline-block;
+	vertical-align:middle;
+}
+a *{
+	display:block;
+	float:left;
+}

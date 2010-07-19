@@ -1,0 +1,72 @@
+<% content_for :header do %>
+	<script type="text/javascript">
+		//<![CDATA[
+		function updateBehaviors()
+		{
+		  Event.addBehavior({
+		    "#command, #command:change, #name, #name:keyup, .fields:keyup, .types:change": function()
+		    {
+					recode();
+				}
+		  });
+		}
+		updateBehaviors();
+		
+		function recode()
+		{
+			str = "";
+			str += "./script/generate ";
+			str += $F('command') + " ";
+			str += $F('name') + " ";
+
+			str += $$('.fields').map(function(el){return el.value}).zip( $$('.types').map(function(el){return el.value})).map(function(el){return el.join(":")}).join(" ");
+
+			$('code').update(str);
+		}
+		
+		function updateFields()
+		{
+			i = 1;
+			$$(".field_number").each(function(el){el.update(i++)})
+			
+			tabindex = 10
+			
+			$$('.fields').zip($$('.types')).flatten().each(function(el){ el.writeAttribute('tabindex', tabindex++)})
+		}
+		//]]>
+	</script>
+<% end %>
+<h1>Criador de Comandos</h1>
+
+<p>
+	<label>Comando:</label>
+	<%= collection_select :foo, :bar, @generators, :name, :name, {}, {:id => :command} %>
+</p>
+
+<p>
+	<label>Nome:</label>
+	<input id="name" value="Nome" type="text" />
+</p>
+
+<p>
+	<%= add_link %>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="5">
+	<tr>
+		<th width="10">Nº</th>
+		<th width="300">Campo</th>
+		<th width="300">Tipo</th>
+		<th width="10">&nbsp;</th>
+	</tr>
+	<tbody id="fields_container">
+		<%= render :partial => 'field' %>
+	<tbody>
+</table>
+
+<p>
+	<%= add_link %>
+</p>
+
+
+<pre class="code" id="code"></pre>

@@ -1,0 +1,15 @@
+<h1>Listagem de Campos</h1>
+
+<% @fields.group_by(&:field_group).each do |group, fields| %>
+	<h2><%= group.name%></h2>
+	<% fields.each do |field| %>
+		<div class="indent">
+			<b><%= field.name%></b>
+			<% unless field.description.blank?%>
+			<br/>
+			<pre><%= field.description%></pre>
+			<% end %>
+		</div>
+	<% end %>
+	<% end %>
+</table>

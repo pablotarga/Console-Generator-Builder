@@ -1,0 +1,10 @@
+		<tr>
+			<td class="field_number">1</td>
+			<td><input type="text" class="fields" /></td>
+			<td>
+				<%= grouped_collection_select :foo, :bar, @groups, :fields, :name, :name, :name, {}, {:id => "", :class => "types"} %>
+		  </td>
+			<td>
+				<%= link_to_function image_tag("delete.png"), "this.up('tr').remove(); updateFields(); recode();"%>
+			</td>
+		</tr>

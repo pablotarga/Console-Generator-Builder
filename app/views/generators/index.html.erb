@@ -1,0 +1,13 @@
+<h1>Listagem de Geradores</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+  </tr>
+
+<% @generators.each do |generator| %>
+  <tr>
+    <td><%=h generator.name %></td>
+  </tr>
+<% end %>
+</table>

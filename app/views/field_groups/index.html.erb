@@ -1,0 +1,14 @@
+<h1>Grupos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @field_groups.each do |field_group| %>
+  <tr>
+    <td><%=h field_group.name %></td>
+  </tr>
+<% end %>
+</table>
+
